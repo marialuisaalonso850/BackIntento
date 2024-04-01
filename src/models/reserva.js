@@ -7,7 +7,12 @@ const reservaSchema = new mongoose.Schema({
   placa: { type: String, required: true},
   correo: { type: String, required: true },
   telefono: { type: Number, required: true },
-  parqueadero: { type: mongoose.Schema.Types.ObjectId, ref: 'Post' } // Referencia al parqueadero
+  parqueadero: { type: mongoose.Schema.Types.ObjectId, ref: 'Post' },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User", // Referencia al modelo User
+    required: true
+  } // Referencia al parqueadero
 });
 
 const Reserva = mongoose.model('Reserva', reservaSchema);

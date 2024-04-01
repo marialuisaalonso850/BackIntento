@@ -25,9 +25,9 @@ const postUser= async (req, res)=>{
                 console.log('/n');
                 console.log('---------------------------------');
                 console.log('accessToken de login', refreshToken);
-                res.status(200)
+                res.status(201)
                     .json(
-                        jsonResponse(200, {
+                        jsonResponse(201, {
                             user: getUserInfo(user),
                             accessToken,
                             refreshToken
