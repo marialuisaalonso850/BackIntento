@@ -22,8 +22,6 @@ async function createReserva(req, res) {
     // Disminuye el número de puestos disponibles en el parqueadero correspondiente
     await Parqueadero.findByIdAndUpdate(req.body.parqueaderoId, { $inc: { puestos: -1 } });
     
-
-    
     
     await sendConfirmationReserva(reserva.nombre,
       reserva.date,
